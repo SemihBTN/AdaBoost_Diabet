@@ -83,6 +83,6 @@ Zirvedeki modelimizin detaylı başarı karnesi, hata matrisi (*Confusion Matrix
 ---
 
 ## 📂 Proje Yapısı ve Kullanım
-* `pima_diabetes_analysis.ipynb`: Veri ön işleme, eksik değer doldurma, özellik eleme ve model eğitim adımlarının yer aldığı ana Jupyter Notebook dosyası.
-* `Diabetes_prediction_datase.csv`: Analizde kullanılan ham veri seti.
+* `AdaBoostClassifier (1).ipynb`: Veri ön işleme, eksik değer doldurma, özellik eleme ve model eğitim adımlarının yer aldığı ana Jupyter Notebook dosyası.
+* `16-diabetes.csv`: Analizde kullanılan ham veri seti.
 * `README.md`: Projenin mimari özetini ve mühendislik kararlarını içeren rapor.
