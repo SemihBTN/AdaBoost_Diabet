@@ -28,7 +28,7 @@ Temizlenen veriler üzerinden tüm değişkenlerin birbiriyle olan ilişkisini m
 ### 2. Temel Risk Faktörleri ve Glikozun Gücü
 Şeker oranının ve temel biyolojik faktörlerin diyabet (`Outcome`) üzerindeki etkisini çoklu grafik matrisiyle inceledim[cite: 47].
 
-![Temel Değişken Dağılımları](Grafikler_1.png)
+![Temel Değişken Dağılımları](Grafikler.png)
 * **Bulgu:** Diyabet hastası olan bireylerin (`Outcome = 1`) ortalama glikoz, yaş ve hamilelik değerlerinin sağlıklı bireylere kıyasla daha yüksek seviyelerde seyrettiği açıkça görülmektedir[cite: 47].
 
 ---
