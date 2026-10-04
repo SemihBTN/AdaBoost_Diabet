@@ -71,7 +71,7 @@ Zirvedeki modelimizin detaylı başarı karnesi, hata matrisi (*Confusion Matrix
 ### 1. Model Sonuçları (AdaBoost / Öne Çıkan Model)
 ![Hata Matrisi 1](Matris_Renkli.png)
 ![Matris Raporu 1](Matris1.png)
-![ROC Eğrisi 1](Roc_Curve_1_2.png)
+![ROC Eğrisi 1](Roc_Curve_1.png)
 * **Değerlendirme:** Sağlıklı bireyleri (`0`) 80 doğru oranla yakalarken, diyabet hastalarını (`1`) 40 başarılı tahminle tespit etmiştir[cite: 50]. Weighted Average bazında **%78** doğruluk oranı yakalamıştır[cite: 52]. ROC eğrisi altında kalan alan **AUC = 0.813** olarak gerçekleşmiş ve modelin ayırt etme gücü tescillenmiştir.
 
 ### 2. Alternatif Model Sonuçları 
