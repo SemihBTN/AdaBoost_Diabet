@@ -18,26 +18,26 @@ Analize ve model eğitimine geçmeden önce, veri setinin kalitesini artırmak a
 * **Aksiyon:** Bu hatalı/eksik sıfır değerleri veri setinden silmek yerine bilgi kaybını önlemek amacıyla **medyan (ortanca değer)** ile doldurularak (*Imputation*) veri seti arındırıldı.
 
 ### 1. Büyük Resim: Korelasyon Matrisi (Pusulamız)
-Temizlenen veriler üzerinden tüm değişkenlerin birbiriyle olan ilişkisini makro düzeyde görebilmek için ısı haritası çıkardım[cite: 49].
+Temizlenen veriler üzerinden tüm değişkenlerin birbiriyle olan ilişkisini makro düzeyde görebilmek için ısı haritası çıkardım.
 
 ![Korelasyon Matrisi](Grafikler_3.png)
-* **Analiz:** Matriste en dikkat çekici unsurlar; Hamilelik sayısı (`Pregnancies`) ile Yaş (`Age`) arasındaki güçlü pozitif yönlü bağ ($0.54$) ve Glikoz (`Glucose`) ile diyabet durumu (`Outcome`) arasındaki kritik ilişkidir ($0.47$)[cite: 49]. Bu matris, model optimizasyonunda hangi özelliklerin kilit rol oynayacağının sinyalini vermiştir.
+* **Analiz:** Matriste en dikkat çekici unsurlar; Hamilelik sayısı (`Pregnancies`) ile Yaş (`Age`) arasındaki güçlü pozitif yönlü bağ ($0.54$) ve Glikoz (`Glucose`) ile diyabet durumu (`Outcome`) arasındaki kritik ilişkidir ($0.47$).Bu matris, model optimizasyonunda hangi özelliklerin kilit rol oynayacağının sinyalini vermiştir.
 
 ---
 
 ### 2. Temel Risk Faktörleri ve Glikozun Gücü
-Şeker oranının ve temel biyolojik faktörlerin diyabet (`Outcome`) üzerindeki etkisini çoklu grafik matrisiyle inceledim[cite: 47].
+Şeker oranının ve temel biyolojik faktörlerin diyabet (`Outcome`) üzerindeki etkisini çoklu grafik matrisiyle inceledim.
 
 ![Temel Değişken Dağılımları](Grafikler.png)
-* **Bulgu:** Diyabet hastası olan bireylerin (`Outcome = 1`) ortalama glikoz, yaş ve hamilelik değerlerinin sağlıklı bireylere kıyasla daha yüksek seviyelerde seyrettiği açıkça görülmektedir[cite: 47].
+* **Bulgu:** Diyabet hastası olan bireylerin (`Outcome = 1`) ortalama glikoz, yaş ve hamilelik değerlerinin sağlıklı bireylere kıyasla daha yüksek seviyelerde seyrettiği açıkça görülmektedir.
 
 ---
 
 ### 3. Genetik Yatkınlık Faktörü (Diabetes Pedigree Function)
-Aileden gelen genetik diyabet risk skorunun (`DiabetesPedigreeFunction`) sınıflar üzerindeki dağılımını **Boxplot** grafiğiyle mercek altına aldım[cite: 48].
+Aileden gelen genetik diyabet risk skorunun (`DiabetesPedigreeFunction`) sınıflar üzerindeki dağılımını **Boxplot** grafiğiyle mercek altına aldım.
 
 ![Genetik Yatkınlık Dağılımı](Grafikler_2.png)
-* **Bulgu:** Diyabet hastası olan bireylerin (`1`) genetik yatkınlık skorlarının medyan ve üst çeyrek dilimlerinin, sağlıklı bireylere (`0`) kıyasla daha yukarıda olduğu ve uç değerlerin (outliers) bu grupta yoğunlaştığı dikkat çekmektedir[cite: 48].
+* **Bulgu:** Diyabet hastası olan bireylerin (`1`) genetik yatkınlık skorlarının medyan ve üst çeyrek dilimlerinin, sağlıklı bireylere (`0`) kıyasla daha yukarıda olduğu ve uç değerlerin (outliers) bu grupta yoğunlaştığı dikkat çekmektedir.
 
 ---
 
@@ -56,7 +56,7 @@ Model performansını maksimize etmek amacıyla özellik önem düzeylerini ince
 
 ## 🤖 Model Kıyaslaması ve Performans Değerlendirmesi
 
-Veri setindeki tüm modelleri test seti üzerinden koşturduğumuzda elde edilen başarım sonuçları[cite: 54]:
+Veri setindeki tüm modelleri test seti üzerinden koşturduğumuzda elde edilen başarım sonuçları:
 
 ![Model Kıyası](Model_Kıyası.png)
 
@@ -66,7 +66,7 @@ Veri setindeki tüm modelleri test seti üzerinden koşturduğumuzda elde edilen
 
 ## 🏆 ZİRVEDEKİ MODEL: Detaylı Hata Matrisleri ve Sınıflandırma Karneleri
 
-Zirvedeki modelimizin detaylı başarı karnesi, hata matrisi (*Confusion Matrix*) ve ROC eğrisi analizi[cite: 50, 52]:
+Zirvedeki modelimizin detaylı başarı karnesi, hata matrisi (*Confusion Matrix*) ve ROC eğrisi analizi:
 
 ### 1. Model Sonuçları (AdaBoost / Öne Çıkan Model)
 ![Hata Matrisi 1](Matris_Renkli.png)
@@ -78,7 +78,7 @@ Zirvedeki modelimizin detaylı başarı karnesi, hata matrisi (*Confusion Matrix
 ![Hata Matrisi 2](Matris_Renkli_2.png)
 ![Matris Raporu 2](Matris2.png)
 ![ROC Eğrisi 2](Roc_Curve_2.png)
-* **Değerlendirme:** Dengeli dağılım, `0.77` doğruluk oranı ve **AUC = 0.794** değerine sahip ROC eğrisiyle modelin genel kararlılığı desteklenmiştir[cite: 51, 53].
+* **Değerlendirme:** Dengeli dağılım, `0.77` doğruluk oranı ve **AUC = 0.794** değerine sahip ROC eğrisiyle modelin genel kararlılığı desteklenmiştir.
 
 ---
 
