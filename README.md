@@ -18,26 +18,26 @@ Analize ve model eğitimine geçmeden önce, veri setinin kalitesini artırmak a
 * **Aksiyon:** Bu hatalı/eksik sıfır değerleri veri setinden silmek yerine bilgi kaybını önlemek amacıyla **medyan (ortanca değer)** ile doldurularak (*Imputation*) veri seti arındırıldı.
 
 ### 1. Büyük Resim: Korelasyon Matrisi (Pusulamız)
-Temizlenen veriler üzerinden tüm değişkenlerin birbiriyle olan ilişkisini makro düzeyde görebilmek için ısı haritası çıkardım.
+Temizlenen veriler üzerinden tüm değişkenlerin birbiriyle olan ilişkisini makro düzeyde görebilmek için ısı haritası çıkardım[cite: 49].
 
-![Korelasyon Matrisi](Grafikler_3_2.png)
-* **Analiz:** Matriste en dikkat çekici unsurlar; Hamilelik sayısı (`Pregnancies`) ile Yaş (`Age`) arasındaki güçlü pozitif yönlü bağ ($0.54$) ve Glikoz (`Glucose`) ile diyabet durumu (`Outcome`) arasındaki kritik ilişkidir ($0.47$). Bu matris, model optimizasyonunda hangi özelliklerin kilit rol oynayacağının sinyalini vermiştir.
+![Korelasyon Matrisi](Grafikler_3_3.png)
+* **Analiz:** Matriste en dikkat çekici unsurlar; Hamilelik sayısı (`Pregnancies`) ile Yaş (`Age`) arasındaki güçlü pozitif yönlü bağ ($0.54$) ve Glikoz (`Glucose`) ile diyabet durumu (`Outcome`) arasındaki kritik ilişkidir ($0.47$)[cite: 49]. Bu matris, model optimizasyonunda hangi özelliklerin kilit rol oynayacağının sinyalini vermiştir.
 
 ---
 
 ### 2. Temel Risk Faktörleri ve Glikozun Gücü
-Şeker oranının ve temel biyolojik faktörlerin diyabet (`Outcome`) üzerindeki etkisini çoklu grafik matrisiyle inceledim.
+Şeker oranının ve temel biyolojik faktörlerin diyabet (`Outcome`) üzerindeki etkisini çoklu grafik matrisiyle inceledim[cite: 47].
 
-![Temel Değişken Dağılımları](6257c451.png)
-* **Bulgu:** Diyabet hastası olan bireylerin (`Outcome = 1`) ortalama glikoz, yaş ve hamilelik değerlerinin sağlıklı bireylere kıyasla daha yüksek seviyelerde seyrettiği açıkça görülmektedir.
+![Temel Değişken Dağılımları](Grafikler_4.png)
+* **Bulgu:** Diyabet hastası olan bireylerin (`Outcome = 1`) ortalama glikoz, yaş ve hamilelik değerlerinin sağlıklı bireylere kıyasla daha yüksek seviyelerde seyrettiği açıkça görülmektedir[cite: 47].
 
 ---
 
 ### 3. Genetik Yatkınlık Faktörü (Diabetes Pedigree Function)
-Aileden gelen genetik diyabet risk skorunun (`DiabetesPedigreeFunction`) sınıflar üzerindeki dağılımını **Boxplot** grafiğiyle mercek altına aldım.
+Aileden gelen genetik diyabet risk skorunun (`DiabetesPedigreeFunction`) sınıflar üzerindeki dağılımını **Boxplot** grafiğiyle mercek altına aldım[cite: 48].
 
-![Genetik Yatkınlık Dağılımı](278ae988.png)
-* **Bulgu:** Diyabet hastası olan bireylerin (`1`) genetik yatkınlık skorlarının medyan ve üst çeyrek dilimlerinin, sağlıklı bireylere (`0`) kıyasla daha yukarıda olduğu ve uç değerlerin (outliers) bu grupta yoğunlaştığı dikkat çekmektedir.
+![Genetik Yatkınlık Dağılımı](Grafikler_2_2.png)
+* **Bulgu:** Diyabet hastası olan bireylerin (`1`) genetik yatkınlık skorlarının medyan ve üst çeyrek dilimlerinin, sağlıklı bireylere (`0`) kıyasla daha yukarıda olduğu ve uç değerlerin (outliers) bu grupta yoğunlaştığı dikkat çekmektedir[cite: 48].
 
 ---
 
@@ -45,40 +45,36 @@ Aileden gelen genetik diyabet risk skorunun (`DiabetesPedigreeFunction`) sınıf
 
 Model performansını maksimize etmek amacıyla özellik önem düzeylerini inceledik:
 
-* **Öncesi (Tüm Değişkenler):** Modelin başlangıçta tüm özelliklere verdiği önem dağılımı:
+* **Öncesi ve Sonrası Optimizasyon:** Yapılan analizler sonucunda modele katkı sağlamayan bazı değişkenler elenerek özellik önem dağılımı güncellenmiştir[cite: 55, 56].
 
-![Modelin Önemsedikleri Başlangıç](b2e3a14e.png)
-
-* **Sonrası (Optimizasyon):** Yapılan analizler sonucunda modele katkı sağlamayan bazı değişkenler optimize edildi.
-
-![Modelin Önemsedikleri Güncel](Modelin_Önemsedikleri_2.png)
-* **Bulgu:** Güncellenen grafikte de görüleceği üzere, tahmin gücünün büyük bir kısmı `Glucose`, `Age` ve `BMI` etrafında yoğunlaşmaktadır.
+![Modelin Önemsedikleri Güncel](Modelin_Önemsedikleri_3.png)
+* **Bulgu:** Güncellenen grafikte de görüleceği üzere, tahmin gücünün büyük bir kısmı `Glucose`, `Age` ve `BMI` etrafında yoğunlaşmaktadır[cite: 55].
 
 ---
 
 ## 🤖 Model Kıyaslaması ve Performans Değerlendirmesi
 
-Veri setindeki tüm modelleri test seti üzerinden koşturduğumuzda elde edilen başarım sonuçları:
+Veri setindeki tüm modelleri test seti üzerinden koşturduğumuzda elde edilen başarım sonuçları[cite: 54]:
 
-![Model Kıyası](Model_Kıyası_2.png)
+![Model Kıyası](Model_Kıyası_3.png)
 
-* **Özetle:** Denediğimiz tüm algoritmalar içinde en yüksek doğruluğu veren **AdaBoost**, %77.92'lik doğruluk oranıyla projenin kazanan modeli olmuştur.
+* **Özetle:** Denediğimiz tüm algoritmalar içinde en yüksek doğruluğu veren **AdaBoost**, %77.92'lik doğruluk oranıyla projenin kazanan modeli olmuştur[cite: 54].
 
 ---
 
 ## 🏆 ZİRVEDEKİ MODEL: Detaylı Hata Matrisleri ve Sınıflandırma Karneleri
 
-Zirvedeki modelimizin detaylı başarı karnesi ve hata matrisi (*Confusion Matrix*) analizi:
+Zirvedeki modelimizin detaylı başarı karnesi ve hata matrisi (*Confusion Matrix*) analizi[cite: 50, 52]:
 
 ### 1. Model Sonuçları (AdaBoost / Öne Çıkan Model)
-![Hata Matrisi 1](Matris_Renkli_2.png)
-![Matris Raporu 1](Matris1_5.png)
-* **Değerlendirme:** Sağlıklı bireyleri (`0`) 80 doğru oranla yakalarken, diyabet hastalarını (`1`) 40 başarılı tahminle tespit etmiştir. Weighted Average bazında **%78** doğruluk oranı yakalamıştır.
+![Hata Matrisi 1](Matris_Renkli_3.png)
+![Matris Raporu 1](Matris1_6.png)
+* **Değerlendirme:** Sağlıklı bireyleri (`0`) 80 doğru oranla yakalarken, diyabet hastalarını (`1`) 40 başarılı tahminle tespit etmiştir[cite: 50]. Weighted Average bazında **%78** doğruluk oranı yakalamıştır[cite: 52].
 
 ### 2. Alternatif Model Sonuçları 
-![Hata Matrisi 2](bea10b4e.png)
-![Matris Raporu 2](Matris2_5.png)
-* **Değerlendirme:** Dengeli dağılım ve `0.77` doğruluk oranıyla modelin genel kararlılığı tescillenmiştir.
+![Hata Matrisi 2](Matris_Renkli_2_2.png)
+![Matris Raporu 2](Matris2_6.png)
+* **Değerlendirme:** Dengeli dağılım ve `0.77` doğruluk oranıyla modelin genel kararlılığı tescillenmiştir[cite: 51, 53].
 
 ---
 
