@@ -66,17 +66,19 @@ Veri setindeki tüm modelleri test seti üzerinden koşturduğumuzda elde edilen
 
 ## 🏆 ZİRVEDEKİ MODEL: Detaylı Hata Matrisleri ve Sınıflandırma Karneleri
 
-Zirvedeki modelimizin detaylı başarı karnesi ve hata matrisi (*Confusion Matrix*) analizi[cite: 50, 52]:
+Zirvedeki modelimizin detaylı başarı karnesi, hata matrisi (*Confusion Matrix*) ve ROC eğrisi analizi[cite: 50, 52]:
 
 ### 1. Model Sonuçları (AdaBoost / Öne Çıkan Model)
 ![Hata Matrisi 1](Matris_Renkli.png)
 ![Matris Raporu 1](Matris1.png)
-* **Değerlendirme:** Sağlıklı bireyleri (`0`) 80 doğru oranla yakalarken, diyabet hastalarını (`1`) 40 başarılı tahminle tespit etmiştir[cite: 50]. Weighted Average bazında **%78** doğruluk oranı yakalamıştır[cite: 52].
+![ROC Eğrisi 1](Roc_Curve_1_2.png)
+* **Değerlendirme:** Sağlıklı bireyleri (`0`) 80 doğru oranla yakalarken, diyabet hastalarını (`1`) 40 başarılı tahminle tespit etmiştir[cite: 50]. Weighted Average bazında **%78** doğruluk oranı yakalamıştır[cite: 52]. ROC eğrisi altında kalan alan **AUC = 0.813** olarak gerçekleşmiş ve modelin ayırt etme gücü tescillenmiştir.
 
 ### 2. Alternatif Model Sonuçları 
 ![Hata Matrisi 2](Matris_Renkli_2.png)
 ![Matris Raporu 2](Matris2.png)
-* **Değerlendirme:** Dengeli dağılım ve `0.77` doğruluk oranıyla modelin genel kararlılığı tescillenmiştir[cite: 51, 53].
+![ROC Eğrisi 2](Roc_Curve_2.png)
+* **Değerlendirme:** Dengeli dağılım, `0.77` doğruluk oranı ve **AUC = 0.794** değerine sahip ROC eğrisiyle modelin genel kararlılığı desteklenmiştir[cite: 51, 53].
 
 ---
 
